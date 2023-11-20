@@ -1,0 +1,11 @@
+-- public.raca definition
+
+-- Drop table
+
+-- DROP TABLE public.raca;
+
+CREATE TABLE public.raca (
+	id serial4 NOT NULL,
+	nome_raca varchar NOT NULL,
+	CONSTRAINT raca_pk PRIMARY KEY (id)
+);
