@@ -1,0 +1,1 @@
+UPDATE usuarios SET nome=ADRIANA, sexo=M, data_nascimento=18/01/1999, endereco=Rua Cascavel, nacionalidade=Brasileiro, id_estado_civil=1, id_raca=1, cpf=145666999, rg=sp222303333, telefone=35998554433 WHERE id='1'
