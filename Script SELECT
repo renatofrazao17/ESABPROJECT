@@ -1,0 +1,1 @@
+SELECT *, TO_CHAR(data_nascimento, 'DD/MM/YYYY') AS data_nascimento_formatada FROM usuarios
