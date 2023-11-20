@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Usuários</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script type='text/javascript' src="main.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }   
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        table th,
+        table td {
+            font-size: 16px;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .label {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .label>div {
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button.cinza {
+            background-color: #ccc;
+            color: #666;
+        }
+
+        button.vermelho {
+            background-color: #a00;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Gerenciamento de Usuários</h1>
+    </header>
+
+    <section id='listaRegistros'>
+
+        <div style='display: flex;'>
+            <input style='flex:1' placeholder="Pesquisar" autofocus id='inputPesquisa' />
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Fone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id='listaRegistrosBody'></tbody>
+        </table>
+
+        <div>
+            <button onclick="vizualizar('cadastro', true)">Novo Usuário</button>
+        </div>
+
+    </section>
+
+    <form id='cadastroRegistro'>
+
+        <div class='label'>
+            <div>ID</div>
+            <div>
+                <input type='number' readonly id='id' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Nome</div>
+            <div>
+                <input id='nome' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Sexo</div>
+            <div>
+                <select id='sexo'>
+                    <option value='M'>Masculino</option>
+                    <option value='F'>Feminino</option>
+                </select>
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Data de Nascimento</div>
+            <div>
+                <input type='date' id='dataNascimento' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Endereço</div>
+            <div>
+                <input id='endereco' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Nacionalidade</div>
+            <div>
+                <input id='nacionalidade' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Estado Civil</div>
+            <div>
+                <select id='estado'>
+                    <option value='1'>Solteiro</option>
+                    <option value='2'>Casado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Raça</div>
+            <div>
+                <select id='raca'>
+                    <option value='1'>Branco</option>
+                    <option value='2'>Negro</option>
+                    <option value='3'>Indígena</option>
+                    <option value='4'>Pardo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>CPF</div>
+            <div>
+                <input id='cpf' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>RG</div>
+            <div>
+                <input id='rg' />
+            </div>
+        </div>
+
+        <div class='label'>
+            <div>Telefone</div>
+            <div>
+                <input type='tel' id='telefone' />
+            </div>
+        </div>
+
+        <div>
+            <button>Salvar</button>
+            <button class="cinza" onclick="limparEdicao()" type='button'>Cancelar</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
